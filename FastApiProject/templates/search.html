@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+ {% block head %}
+
+<script>
+    const searchForContacts = () => {
+        const searchInputValue = document.getElementById("contacts_search").value;
+        window.location.href = `/phonebook/search/${searchInputValue}`;
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+<main>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Номер телефона</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for row in search %}
+
+        <tr>
+            <td>{{row.name}}</td>
+            <td>{{row.surname}}</td>
+            <td>{{row.phone_number}}</td>
+        </tr>
+
+        {% endfor %}
+        </tbody>
+
+    </table>
+</main>
+
+{% endblock %}
+

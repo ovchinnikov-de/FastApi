@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+ {% block head %}
+
+<link href="{{ url_for('static', path='/add.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Добавить контакт</h2>
+    <form action='/phonebook/add' method="post">
+        <label for="firstname">Имя:</label>
+        <input type="text" id="firstname" name="name">
+
+        <label for="lastname">Фамилия:</label>
+        <input type="text" id="lastname" name="surname">
+
+        <label for="phonenumber">Номер телефона:</label>
+        <input type="text" id="phonenumber" name="phone_number">
+
+        <input type="submit" value="Добавить контакт">
+    </form>
+</div>
+{% endblock %}

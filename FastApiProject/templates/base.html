@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Телефонная книга</title>
+   <link href="{{ url_for('static', path='/base.css') }}" rel="stylesheet">
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+<header>
+    <div>
+        <a class="col" id="inden" href="/phonebook">Телефонная книга</a>
+        <a class="col" href="/phonebook/add/">Добавить контакт</a>
+    </div>
+    <div class="search-container">
+        <input id="contacts_search" type="text" placeholder="Поиск...">
+        <button onclick="searchForContacts()" >Найти</button>
+    </div>
+</header>
+{% block content %}{% endblock %}
+
+</body>
+</html>
